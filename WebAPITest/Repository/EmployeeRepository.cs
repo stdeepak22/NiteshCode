@@ -30,5 +30,10 @@ namespace WebAPITest.Repository
         {
             return dt.Add(employee);
         }
+
+        public bool DeleteEmployee(int empId)
+        {
+            return dt.Delete(empId);
+        }
     }
 }

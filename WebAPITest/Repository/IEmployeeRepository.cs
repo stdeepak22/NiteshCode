@@ -14,5 +14,7 @@ namespace WebAPITest.Repository
         Employee GetEmployeeById(int id);
 
         Employee SaveEmployee(Employee e);
+
+        bool DeleteEmployee(int empId);
     }
 }

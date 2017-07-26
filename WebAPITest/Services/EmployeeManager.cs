@@ -34,5 +34,11 @@ namespace WebAPITest.Services
             return _employeeRepository.SaveEmployee(obj);
 
         }
+
+
+        public bool VerifyAndDelete(int id)
+        {
+            return _employeeRepository.DeleteEmployee(id);
+        }
     }
 }

@@ -25,9 +25,22 @@ namespace WebAPITest.Database
 
         public Employee Add(Employee obj)
         {
-            obj.ID = _data.Max(c => c.ID) + 1;
+            
+            obj.ID = _data.Any() ? _data.Max(c => c.ID) + 1 : 1;
             _data.Add(obj);
             return obj;
+        }
+
+        public bool Delete(int eId)
+        {
+            var first = _data.FirstOrDefault(c => c.ID == eId);
+            if(first != null)
+            {
+                _data.Remove(first);
+                return true;
+            }
+
+            return false;
         }
         
     }

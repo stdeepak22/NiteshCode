@@ -10,5 +10,6 @@ namespace WebAPITest.Database
     {
         IEnumerable<T> Data { get; }
         T Add(T obj);
+        bool Delete(int eId);
     }
 }

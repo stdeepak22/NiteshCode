@@ -30,5 +30,10 @@ namespace WebAPITest.Controllers
         {
             return _employeeManager.VerifyAndSave(employee);
         }
+        
+        public bool DeleteEmployee(int id)
+        {
+            return _employeeManager.VerifyAndDelete(id);
+        }
     }
 }
