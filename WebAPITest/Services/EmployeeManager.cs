@@ -24,5 +24,15 @@ namespace WebAPITest.Services
         {
             return _employeeRepository.GetEmployeeById(id);
         }
+
+        public Employee VerifyAndSave(Employee obj)
+        {
+            //verified here.
+
+
+            //lets save now.
+            return _employeeRepository.SaveEmployee(obj);
+
+        }
     }
 }

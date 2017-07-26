@@ -26,6 +26,9 @@
         <input type="button" id="btnSearch" value="Search" onclick="Search();" />
     </div>
 
+
+    <input type="button" value="Add Dummy Employee" onclick="AddDummyEmployee();" />
+
     <script src="Scripts/jquery-3.1.1.min.js"></script>
     <script type="text/javascript">
         var uri = "api/employee";
@@ -34,6 +37,35 @@
         $(document).ready(function () {
             searchAll();
         });
+
+
+        function AddDummyEmployee()
+        {
+            $.ajax({
+                url: uri,
+                type: 'POST',
+                data:{"Name":"Dummy Name", "Experience":"-1", "Designation":"Dummy Desg."},
+                success: function (item) {
+                    if (item !== null && item !== undefined) {
+                        $("#employeeTbl tbody tr").remove();
+                        AddRows(item);
+                        ClearField($("#empID"));
+                    }
+                },
+                error: function (request, message, error) {
+                    console.log(message);
+                    console.log(error);
+                    var msg = "";
+                    msg += "Code: " + request.status + "\n";
+                    msg += "Text: " + request.statusText + "\n";
+                    if (request.responseJSON != null) {
+                        msg += "Message: " +
+                            request.responseJSON.Message + "\n";
+                    }
+                    alert(msg);
+                }
+            });
+        }
 
         function searchAll() {
             //$.getJSON(uri)

@@ -11,12 +11,7 @@ namespace WebAPITest
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
-        {
-            // Web API configuration and services
-            var container = new UnityContainer();
-            container.RegisterType<IEmployeeRepository, EmployeeRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<IEmployeeManager, EmployeeManager>(new HierarchicalLifetimeManager());
-            
+        {                        
             // Web API routes
             config.MapHttpAttributeRoutes();
 

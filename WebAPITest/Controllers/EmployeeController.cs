@@ -25,5 +25,10 @@ namespace WebAPITest.Controllers
         {
             return _employeeManager.GetEmployeeById(id);
         }
+
+        public Employee PostEmployee(Employee employee)
+        {
+            return _employeeManager.VerifyAndSave(employee);
+        }
     }
 }

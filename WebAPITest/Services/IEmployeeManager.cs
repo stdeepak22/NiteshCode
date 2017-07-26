@@ -13,5 +13,6 @@ namespace WebAPITest.Services
 
         Employee GetEmployeeById(int id);
 
+        Employee VerifyAndSave(Employee e);
     }
 }

@@ -12,5 +12,7 @@ namespace WebAPITest.Repository
         IEnumerable<Employee> GetAllEmployees();
 
         Employee GetEmployeeById(int id);
+
+        Employee SaveEmployee(Employee e);
     }
 }
